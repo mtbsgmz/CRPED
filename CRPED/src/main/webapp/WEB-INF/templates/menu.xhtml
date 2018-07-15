@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="bootstrap_337"
+		name="css/bootstrap.min.css" />
+</h:head>
+<body>
+
+	<ui:composition>
+		<h:form>
+			<div class="list-group">
+				<h:commandLink action="dep.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'dep' ? 'active':''}"
+					value="Devam Eden Projeler" />
+				<h:commandLink action="gep.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'gep' ? 'active':''}"
+					value="Gelecek Projeler" />
+				<h:commandLink action="bp.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'bp' ? 'active':''}"
+					value="Biten Projeler" />
+				<h:commandLink action="reports.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'reports' ? 'active':''}"
+					value="Raporlar" />
+				<h:commandLink action="pcreate.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim == 'pcreate' ? 'active':''}"
+					value="Proje Olustur" />
+				<h:commandLink action="rcreate.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'rcreate' ? 'active':''}"
+					value="Rapor Olustur" />
+				<h:commandLink action="settings.xhtml?faces-redirect=true"
+					styleClass="list-group-item #{gelensecim eq 'settings' ? 'active':''}"
+					value="Ayarlar" />
+
+
+			</div>
+		</h:form>
+	</ui:composition>
+
+
+</body>
+</html>
