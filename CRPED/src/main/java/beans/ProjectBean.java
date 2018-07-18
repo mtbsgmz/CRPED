@@ -105,7 +105,6 @@ public class ProjectBean implements Serializable{
 				+ account_id + ", description=" + description + ", projectService=" + projectService + "]";
 	}
 	public void Save() {
-		System.out.println(toString());
 		Project project = new Project();
 		project.setName(getName());
 		project.setBaslangic(getBaslangic());
@@ -115,7 +114,7 @@ public class ProjectBean implements Serializable{
 		project.setLocation(getLocation());
 		project.setSTATUS(getSTATUS());
 		project.setDescription(getDescription());
-
+		System.out.println(toString());
 		
 	}
 	

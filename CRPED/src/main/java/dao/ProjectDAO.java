@@ -10,7 +10,7 @@ import util.HibernateUtil;
 
 public class ProjectDAO implements ICRUD<Project> {
 
-	@Override
+
 	public boolean create(Project varlik) {
 		Session session = null;
 		try {
@@ -33,36 +33,36 @@ public class ProjectDAO implements ICRUD<Project> {
 		return false;
 	}
 
-	@Override
+
 	public Project read(Long id) {
 		try {
-			Project kisi = HibernateUtil.getSessionFactory().openSession().get(Project.class, id);
-			return kisi;
+			Project proje = HibernateUtil.getSessionFactory().openSession().get(Project.class, id);
+			return proje;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	@Override
+	
 	public boolean update(Project varlik, Long id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+
 	public boolean update(Project varlik) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+
 	public boolean delete(Long id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+
 	public List<Project> readAll() {
 		Session session = null;
 		try {

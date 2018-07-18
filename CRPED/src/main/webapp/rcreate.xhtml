@@ -1,18 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
-<ui:composition template="/WEB-INF/templates/template.xhtml">
+<h:head></h:head>
+<body>
+	<ui:composition template="/WEB-INF/templates/template.xhtml">
 		<ui:param name="secim" value="rcreate" />
 		<ui:define name="orta">
 
-			
+			<h:form>
+				<p:growl></p:growl>
+				<p:panelGrid columns="2">
+
+					<p:outputLabel value=" Raporun Eklenecegi Projeyi Seciniz:" />
+					<p:selectCheckboxMenu id="menu"
+						value="#{checkboxView.selectedCities}" label="Projeyi seçiniz"
+						filter="true" filterMatchMode="startsWith"
+						panelStyle="width:250px">
+						<f:selectItems value="#{checkboxView.cities}" />
+					</p:selectCheckboxMenu>
+
+					<p:outputLabel value="İnşaatın Durumu:" />
+					<p:inputText id="status" placeholder="Durum Yazın"
+						value="#{projectBean.manager}" required="true"
+						requiredMessage="Lütfen Durum Girin!" />
+
+					<p:outputLabel value=" Rapor Detayı:" />
+					<p:inputTextarea rows="6" cols="33"
+						placeholder="Rapor Detayı Varsa Yazınız..."
+						value="#{projectBean.description}" />
+
+
+
+
+					<p:outputLabel value="Raporu Hazırlayan" />
+					<p:inputText id="manager" placeholder="Proje Sorumlusu Girin!"
+						value="#{projectBean.manager}" required="true"
+						requiredMessage="Lütfen İsim Girin!" />
+
+
+					<p:outputLabel
+						value="Rapor Oluşturma  Tarihi:" />
+					<p:calendar id="baslangic" value="#{projectBean.baslangic}"
+						showOn="button" placeholder="Tarih Seçin!" />
+
+				</p:panelGrid>
+				<p:spacer />
+				<p:commandButton value="Rapor Oluştur"
+					action="#{projectBean.Save()}" ajax="false"
+					class="btn btn-success btn-lg" />
+
+			</h:form>
+
 		</ui:define>
-		
+
 	</ui:composition>
-</body> 
+</body>
 </html>

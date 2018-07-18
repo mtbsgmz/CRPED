@@ -10,14 +10,14 @@ public class ProjectService {
 	
 	ProjectDAO projectDao = new ProjectDAO();
 	
-	public void ProjeEkle(Project kisi) {
-		projectDao.create(kisi);
+	public void ProjeEkle(Project proje) {
+		projectDao.create(proje);
 	}
 	public Project ProjeGoster(Long id) {
 		return projectDao.read(id);
 	}
 
-	public List<Project> KisileriGoster() {
+	public List<Project> ProjeleriGoster() {
 		return projectDao.readAll();
 	}
 
