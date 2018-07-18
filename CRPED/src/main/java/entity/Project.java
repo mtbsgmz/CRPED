@@ -21,7 +21,7 @@ import static javax.persistence.TemporalType.DATE;
 public class Project implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-//test
+
 	
 	@Id
 	@SequenceGenerator(name = "PRO_SEQ", initialValue = 1, allocationSize = 1, sequenceName = "PRO_SEQ")
