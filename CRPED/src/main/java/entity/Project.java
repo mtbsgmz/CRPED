@@ -49,6 +49,8 @@ public class Project implements Serializable {
 
 	private String description;
 
+	
+
 	public Long getReport_id() {
 		return report_id;
 	}

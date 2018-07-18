@@ -79,12 +79,7 @@ public class ProjectBean implements Serializable{
 	public void setBitis(Date bitis) {
 		this.bitis = bitis;
 	}
-	public ProjectService getProjectService() {
-		return projectService;
-	}
-	public void setProjectService(ProjectService projectService) {
-		this.projectService = projectService;
-	}
+	
 	public Long getAccount_id() {
 		return account_id;
 	}
@@ -102,7 +97,7 @@ public class ProjectBean implements Serializable{
 	public String toString() {
 		return "ProjectBean [name=" + name + ", cost=" + cost + ", manager=" + manager + ", STATUS=" + STATUS
 				+ ", location=" + location + ", baslangic=" + baslangic + ", bitis=" + bitis + ", account_id="
-				+ account_id + ", description=" + description + ", projectService=" + projectService + "]";
+				+ account_id + ", description=" + description + "]";
 	}
 	public void Save() {
 		Project project = new Project();
@@ -110,7 +105,7 @@ public class ProjectBean implements Serializable{
 		project.setBaslangic(getBaslangic());
 		project.setBitis(getBitis());
 		project.setManager(getManager());
-		project.setManager(getManager());
+		project.setCost(getCost());
 		project.setLocation(getLocation());
 		project.setSTATUS(getSTATUS());
 		project.setDescription(getDescription());
