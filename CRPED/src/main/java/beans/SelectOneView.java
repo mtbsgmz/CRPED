@@ -1,7 +1,7 @@
 package beans;
 
 import javax.faces.bean.ManagedBean;
-
+/*
 @ManagedBean
 public class SelectOneView {
      
@@ -14,4 +14,4 @@ public class SelectOneView {
     public void setOption(String option) {
         this.option = option;
     }
-}
+}*/

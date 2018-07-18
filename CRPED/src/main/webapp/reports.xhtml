@@ -5,7 +5,24 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head>
+<h:head>
+<style type="text/css">         
+    /*demo*/
+    .ui-dataview-list .ui-dataview-row {
+        border-bottom: 1px solid #A8A8A8;
+        padding: 25px 10px;
+    }
+ 
+    .logo {
+        width: 5%;
+    }
+    .detail {
+        width: 85%;
+        padding-left: 25px;
+    }
+</style>
+
+</h:head>
 <body>
 
 	<ui:composition template="/WEB-INF/templates/template.xhtml">
@@ -17,74 +34,64 @@
 				<p:panelGrid columns="2">
 
 					<p:outputLabel
-						value=" Tarihe Göre veya Proje Bazlı Rapor Sıralaması Yapabilirsiniz." />
+						value=" Proje Bazlı Rapor Sıralaması Yapabilirsiniz." />
+	
+					<p:selectOneMenu id="city" value="#{selectOneMenuView.city}"
+						effect="fold" editable="true">
+						<f:selectItem itemLabel="Select One" itemValue="1" />
+						<f:selectItems value="#{selectOneMenuView.cities}" />
+					</p:selectOneMenu>
 
-					<p:dataGrid var="car" value="#{dataGridView.cars}" columns="3"
-						layout="grid" rows="12" paginator="true" id="cars"
-						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="6,12,16">
-
-						<f:facet name="header">
+				</p:panelGrid>
+				<p:spacer />
+			</h:form>
+<h:form id="form">
+    <p:dataGrid var="car" value="#{dataGridView.cars}" columns="3" layout="grid"
+        rows="12" paginator="true" id="cars"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        rowsPerPageTemplate="6,12,16">
+ 
+        <f:facet name="header">
             Cars for Sale
         </f:facet>
-
-						<p:panel header="#{car.id}" style="text-align:center">
-							<h:panelGrid columns="1" style="width:100%">
-								<p:graphicImage name="demo/images/car/#{car.brand}.gif" />
-
-								<h:outputText value="#{car.year}" />
-
-								<p:commandLink update=":form:carDetail"
-									oncomplete="PF('carDialog').show()" title="View Detail">
-									<h:outputText styleClass="ui-icon ui-icon-search"
-										style="margin:0 auto;" />
-									<f:setPropertyActionListener value="#{car}"
-										target="#{dataGridView.selectedCar}" />
-								</p:commandLink>
-							</h:panelGrid>
-						</p:panel>
-
-					</p:dataGrid>
-					<p:dialog header="Car Info" widgetVar="carDialog" modal="true"
-						showEffect="fade" hideEffect="fade" resizable="false">
-						<p:outputPanel id="carDetail" style="text-align:center;">
-							<p:panelGrid columns="2"
-								rendered="#{not empty dataGridView.selectedCar}"
-								columnClasses="label,value">
-								<f:facet name="header">
-									<p:graphicImage
-										name="demo/images/car/#{dataGridView.selectedCar.brand}-big.gif" />
-								</f:facet>
-
-								<h:outputText value="Id:" />
-								<h:outputText value="#{dataGridView.selectedCar.id}" />
-
-								<h:outputText value="Year" />
-								<h:outputText value="#{dataGridView.selectedCar.year}" />
-
-								<h:outputText value="Color:" />
-								<h:outputText value="#{dataGridView.selectedCar.color}"
-									style="color:#{dataGridView.selectedCar.color}" />
-
-								<h:outputText value="Price" />
-								<h:outputText value="$#{dataGridView.selectedCar.price}" />
-							</p:panelGrid>
-						</p:outputPanel>
-					</p:dialog>
-
-
-
-
-
-					<p:selectCheckboxMenu id="menu"
-						value="#{checkboxView.selectedCities}" label="Projeyi seçiniz"
-						filter="true" filterMatchMode="startsWith"
-						panelStyle="width:250px">
-						<f:selectItems value="#{checkboxView.cities}" />
-					</p:selectCheckboxMenu>
-				</p:panelGrid>
-			</h:form>
-
+ 
+        <p:panel header="#{car.id}" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+                <p:graphicImage name="demo/images/car/#{car.brand}.gif"/> 
+ 
+                <h:outputText value="#{car.year}" />
+ 
+                <p:commandLink update=":form:carDetail" oncomplete="PF('carDialog').show()" title="View Detail">
+                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                    <f:setPropertyActionListener value="#{car}" target="#{dataGridView.selectedCar}" />
+                </p:commandLink>
+            </h:panelGrid>
+        </p:panel>
+ 
+    </p:dataGrid>
+ 
+    <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty dataGridView.selectedCar}" columnClasses="label,value">
+                <f:facet name="header">
+                    <p:graphicImage name="demo/images/car/#{dataGridView.selectedCar.brand}-big.gif"/> 
+                </f:facet>
+ 
+                <h:outputText value="Id:" />
+                <h:outputText value="#{dataGridView.selectedCar.id}" />
+ 
+                <h:outputText value="Year" />
+                <h:outputText value="#{dataGridView.selectedCar.year}" />
+ 
+                <h:outputText value="Color:" />
+                <h:outputText value="#{dataGridView.selectedCar.color}" style="color:#{dataGridView.selectedCar.color}"/>
+ 
+                <h:outputText value="Price" />
+                <h:outputText value="$#{dataGridView.selectedCar.price}" />
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+</h:form>
 
 
 
