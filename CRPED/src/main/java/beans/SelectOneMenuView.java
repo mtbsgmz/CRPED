@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+/*
 
 @ManagedBean
 public class SelectOneMenuView {
@@ -23,4 +24,4 @@ public class SelectOneMenuView {
 		cities.put("Berlin", "Berlin");
 
 	}
-}
+}*/

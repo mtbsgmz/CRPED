@@ -5,9 +5,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import org.primefaces.showcase.domain.Car;
-import org.primefaces.showcase.service.CarService;
- 
+
+ /*
 @ManagedBean
 @ViewScoped
 public class DataGridView implements Serializable {
@@ -39,4 +38,4 @@ public class DataGridView implements Serializable {
     public void setSelectedCar(Car selectedCar) {
         this.selectedCar = selectedCar;
     }
-}
+}*/

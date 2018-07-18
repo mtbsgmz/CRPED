@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.UUID;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import org.primefaces.showcase.domain.Car;
- 
+ /*
 @ManagedBean(name = "carService")
 @ApplicationScoped
 public class CarService {
@@ -80,4 +79,4 @@ public class CarService {
     public List<String> getBrands() {
         return Arrays.asList(brands);
     }
-}
+}*/
