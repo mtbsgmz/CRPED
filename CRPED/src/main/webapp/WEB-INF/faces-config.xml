@@ -7,22 +7,19 @@
 	<navigation-rule>
 		<from-view-id>login.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{login.checkUser()}</from-action>
+			<from-action>#{pageController.checkUser()}</from-action>
 			<from-outcome>true</from-outcome>
-			<to-view-id>gep.xhtml</to-view-id>
+			<to-view-id>projects.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
+		
 		<navigation-case>
-			<from-action>#{login.checkUser()}</from-action>
+			<from-action>#{pageController.checkUser()}</from-action>
 			<from-outcome>false</from-outcome>
 			<to-view-id>login.xhtml</to-view-id>
 			<redirect></redirect>
 		</navigation-case>
-		<navigation-case>
-			<from-action>#{login.signup()}</from-action>
-			<from-outcome>true</from-outcome>
-			<to-view-id>signup.xhtml</to-view-id>
-			<redirect></redirect>
-		</navigation-case>
+		
+	
 	</navigation-rule>
 </faces-config>

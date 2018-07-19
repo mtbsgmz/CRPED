@@ -1,11 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<h:head>
+<h:outputStylesheet library="bootstrap_337"
+		name="css/bootstrap.min.css" />
+		<h:outputStylesheet library="css"  name="css/style.css" /></h:head>
+<body>
 
-</body> 
+	<h:form>
+		<p:panelGrid columns="3"
+			style="margin: auto; width: 50%;
+   	   	  positions: absolute;">
+			<f:facet name="header">MEMBERSHIP PAGE</f:facet>
+			<h:outputText value="Yönetici Hesabı: " />
+			<p:inputText id="aEmail" placeholder="Email Girin..."
+				value="#{signupBean.aEmail}" required="true"
+				requiredMessage="Lütfen Email Girin!" />
+				
+				<p:inputText id="aPass" placeholder="Parola Girin..."
+				value="#{signupBean.aPass}" required="true"
+				requiredMessage="Lütfen Parola Girin!" />
+				
+				
+				
+				<h:outputText value="Kullanıcı Hesabı: " />
+				<p:inputText id="uEmail" placeholder="Email Girin..."
+				value="#{signupBean.uEmail}" required="true"
+				requiredMessage="Lütfen Email Girin!" />
+				<p:inputText id="uPass" placeholder="Parola Girin..."
+				value="#{signupBean.uPass}" required="true"
+				requiredMessage="Lütfen Parola Girin!" />
+			
+			<h:outputText value="Şirket Adı: " />
+				<p:inputText id="compName" placeholder="Şirket Adı Girin..."
+				value="#{signupBean.compName}" required="true"
+				requiredMessage="Lütfen Şirket Adı Girin!" />
+			
+			<p:commandButton value="+Üye Oluştur" action="#{signupBean.Save()}"
+				ajax="false" class="btn btn-success btn-lg "  />
+		</p:panelGrid>
+		
+	</h:form>
+	
+	
+</body>
 </html>

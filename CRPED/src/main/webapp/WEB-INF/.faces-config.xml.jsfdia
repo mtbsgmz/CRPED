@@ -3,19 +3,16 @@
  <PROCESS-ITEM NAME="rules:login.xhtml" PATH="login.xhtml"
   SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:login.xhtml:0" NAME="item" PATH="login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="true:#{login.checkUser()}:gep.xhtml"
-    NAME="output" PATH="gep.xhtml" TARGET="rules:gep.xhtml"
-    TITLE="#{login.checkUser()}:true" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="false:#{login.checkUser()}:login.xhtml"
-    NAME="output1" PATH="login.xhtml" TARGET="rules:login.xhtml"
-    TITLE="#{login.checkUser()}:false" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="true:#{login.signup()}:signup.xhtml"
-    NAME="output2" PATH="signup.xhtml" TARGET="rules:signup.xhtml"
-    TITLE="#{login.signup()}:true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="true:#{pageController.checkUser()}:projects.xhtml" NAME="output"
+    PATH="projects.xhtml" TARGET="rules:projects.xhtml"
+    TITLE="#{pageController.checkUser()}:true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="false:#{pageController.checkUser()}:login.xhtml" NAME="output1"
+    PATH="login.xhtml" TARGET="rules:login.xhtml"
+    TITLE="#{pageController.checkUser()}:false" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:gep.xhtml" PATH="gep.xhtml"
-  SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:signup.xhtml" PATH="signup.xhtml"
-  SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:projects.xhtml" PATH="projects.xhtml"
+  SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

@@ -11,31 +11,25 @@
 		<p:panelGrid columns="2"
 			style="positions: absolute; top: 250px; left: 500px;">
 			<f:facet name="header">Construction Reports Login</f:facet>
+		
+		
+		
 			<h:outputText value="Username" />
-			<p:inputText value="#{login.username}" />
+			<p:inputText id="username" value="#{pageController.username}" />
 			<h:outputText value="Password" />
-			<p:password value="#{login.password}" />
+			<p:password id="password" value="#{pageController.password}" /> 
+			
 			<f:facet name="footer">
-				<p:commandButton value="SIGN IN"
-					actionListener="#{login.checkUser()}" />
-				
-					<p:commandButton value="SIGN UP"
-					actionListener="#{login.signup()}" />
+				<p:commandButton value="SIGN IN" ajax="false"
+					actionListener="#{pageController.checkUser()}" />
+					
+					
+					<p:commandButton value="SIGN UP" ajax="false"		
+					action="signup?faces-redirect=true"/>
 			</f:facet>
 		</p:panelGrid>
 	</h:form>
 
-	<script type="text/javascript">
-    function handleLoginRequest(xhr, status, args) {
-        if(args.validationFailed || !args.loggedIn) {
-            PF('dlg').jq.effect("shake", {times:5}, 100);
-        }
-        else {
-            PF('dlg').hide();
-            $('#loginLink').fadeOut();
-        }
-    }
-</script>
-
+	
 </body>
 </html>

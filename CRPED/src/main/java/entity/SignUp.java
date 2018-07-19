@@ -2,37 +2,43 @@ package entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+@Entity
+@Table
 public class SignUp implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	@Id
+	@SequenceGenerator(name = "URS_SEQ", initialValue = 1, allocationSize = 1, sequenceName = "USR_SEQ")
+	@GeneratedValue(generator = "USR_SEQ", strategy = GenerationType.SEQUENCE)
+	private Long id;
 	private String compName;
-	private String upImage;
-	private String admin;
+	private String aEmail;
 	private String aPass;
-	private String aPassV;
-	private String user;
+	private String uEmail;
 	private String uPass;
-	private String uPassV;
-	
-	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getCompName() {
 		return compName;
 	}
 	public void setCompName(String compName) {
 		this.compName = compName;
 	}
-	public String getUpImage() {
-		return upImage;
+	public String getaEmail() {
+		return aEmail;
 	}
-	public void setUpImage(String upImage) {
-		this.upImage = upImage;
-	}
-	public String getAdmin() {
-		return admin;
-	}
-	public void setAdmin(String admin) {
-		this.admin = admin;
+	public void setaEmail(String aEmail) {
+		this.aEmail = aEmail;
 	}
 	public String getaPass() {
 		return aPass;
@@ -40,17 +46,11 @@ public class SignUp implements Serializable{
 	public void setaPass(String aPass) {
 		this.aPass = aPass;
 	}
-	public String getaPassV() {
-		return aPassV;
+	public String getuEmail() {
+		return uEmail;
 	}
-	public void setaPassV(String aPassV) {
-		this.aPassV = aPassV;
-	}
-	public String getUser() {
-		return user;
-	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setuEmail(String uEmail) {
+		this.uEmail = uEmail;
 	}
 	public String getuPass() {
 		return uPass;
@@ -58,13 +58,9 @@ public class SignUp implements Serializable{
 	public void setuPass(String uPass) {
 		this.uPass = uPass;
 	}
-	public String getuPassV() {
-		return uPassV;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-	public void setuPassV(String uPassV) {
-		this.uPassV = uPassV;
-	}
-	
 	
 	
 }
