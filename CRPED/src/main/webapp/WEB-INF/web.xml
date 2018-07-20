@@ -17,7 +17,7 @@
 
 	<display-name>JSF-Facelet-Startup</display-name>
 	<welcome-file-list>
-		<welcome-file>login.xhtml</welcome-file>
+		<welcome-file>projects.xhtml</welcome-file>
 	</welcome-file-list>
 	<!-- <context-param> <description>State saving method: 'client' or 'server' 
 		(=default). See JSF Specification </description> <param-name>javax.faces.STATE_SAVING_METHOD</param-name> 

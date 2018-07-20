@@ -32,6 +32,12 @@ public class ReportDAO implements ICRUD<Report> {
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean delete(Long id) {
+		
+		return false;
+	}
 
 	@Override
 	public Report read(Long id) {
@@ -56,11 +62,7 @@ public class ReportDAO implements ICRUD<Report> {
 		return false;
 	}
 
-	@Override
-	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public List<Report> readAll() {

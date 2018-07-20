@@ -15,7 +15,7 @@
 		<p:panelGrid columns="3"
 			style="margin: auto; width: 50%;
    	   	  positions: absolute;">
-			<f:facet name="header">MEMBERSHIP PAGE</f:facet>
+			<f:facet name="header">İNŞAAT ŞİRKETİ KAYIT SAYFASI</f:facet>
 			<h:outputText value="Yönetici Hesabı: " />
 			<p:inputText id="aEmail" placeholder="Email Girin..."
 				value="#{signupBean.aEmail}" required="true"
@@ -24,9 +24,7 @@
 				<p:inputText id="aPass" placeholder="Parola Girin..."
 				value="#{signupBean.aPass}" required="true"
 				requiredMessage="Lütfen Parola Girin!" />
-				
-				
-				
+							
 				<h:outputText value="Kullanıcı Hesabı: " />
 				<p:inputText id="uEmail" placeholder="Email Girin..."
 				value="#{signupBean.uEmail}" required="true"
@@ -41,7 +39,7 @@
 				requiredMessage="Lütfen Şirket Adı Girin!" />
 			
 			<p:commandButton value="+Üye Oluştur" action="#{signupBean.Save()}"
-				ajax="false" class="btn btn-success btn-lg "  />
+				ajax="false" class="btn btn-success btn "  />
 		</p:panelGrid>
 		
 	</h:form>
